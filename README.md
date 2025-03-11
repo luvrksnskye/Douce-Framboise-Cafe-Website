@@ -1,6 +1,6 @@
 # Douce Framboise Cafe! 🍓
 
-Welcome to the most special corner of the internet - a website made with love for my amazing friend! ✨
+Welcome to the most special corner of the internet - a website made with love for my amazing friend! Please note that this was not optimized for phones, so please check the website in a desktop environment. ✨
 
 ## 💖 About This Project
 
