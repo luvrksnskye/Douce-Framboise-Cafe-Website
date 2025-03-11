@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Douce Framboise Cafe</title>
+<link rel="icon" type="image/x-icon" href="../assets/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="music-container">
+      <img id="vinyl" src="../assets/vinyl.png" alt="Vinyl" />
+      <div id="music-inner">
+        <img id="music-icon" src="../assets/desayuno.png" alt="Music Icon" />
+        <img id="music-icon-1" src="../assets/cafe.png" alt="Music Icon" />
+        <div id="music-player">
+        </div>
+      </div>
+    </div>
+
+  <!-- Positioned images -->
+  <div class="tilt-image cafe">
+    <img src="../assets/cafe.png" alt="Cafe">
+  </div>
+  
+  <div class="tilt-image gatito">
+    <img title="shhh, the kitten is sleeping!"src="../assets/gatito.png" alt="Cat">
+  </div>
+  
+  <div class="tilt-image desayuno">
+    <img src="../assets/desayuno.png" alt="Breakfast">
+  </div>
+
+
+    <div class="background-container">
+      <img src="/assets/chat-about.png" class="background-image" alt="Chat About Background">
+      <div class="side">
+        <center>
+          <img src="../assets/gifs/strawberryribbon.gif"> 
+          <a href="../about/index.html">about</a>
+          <br>
+          <img src="../assets/gifs/pallette1.gif"> 
+          <a href="../gallery/index.html">gallery</a>
+          <br>
+          <img src="../assets/gifs/house3.gif"> 
+          <a href="../index.html">go home</a>
+        </center>
+      </div>
+      <div class="page-container">
+        <div class="container-left">
+            <div class="chat-rules">
+                <h2>✧･ﾟ: *✧･ﾟ Chat Rules ･ﾟ✧*:･ﾟ✧</h2>
+                <ul>
+                    <li>Be kind and respectful to everyone</li>
+                    <li>No spamming or excessive emoji use</li>
+                    <li>Keep conversations appropriate for all ages</li>
+                    <li>No sharing personal information</li>
+                    <li>English or Spanish only please</li>
+                    <li>Have fun!</li>
+                </ul>
+                <p>Thank you for visiting our cozy corner of the internet!!</p>
+            </div>
+        </div>
+        
+        <!-- Right side with chat window -->
+        <div id="chat-window">
+            <div class="window">
+                <div class="titlebar">
+                    <div class="window-buttons">
+                        <div class="window-button minimize"></div>
+                        <div class="window-button maximize"></div>
+                        <div class="window-button close"></div>
+                    </div>
+                </div>
+                <div class="content-wrapper">
+                    <div class="content">
+                        <iframe 
+                            src="https://www3.cbox.ws/box/?boxid=3544944&boxtag=TxcnGQ" 
+                            allowtransparency="yes" 
+                            allow="autoplay" 
+                            frameborder="0" 
+                            marginheight="0" 
+                            marginwidth="0" 
+                            scrolling="auto">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    
+
+    <style>
+      .starfall-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: transparent;
+      overflow: hidden;
+      display: flex;
+      font-family: 'Anton', sans-serif;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      z-index: -1;
+      }
+      
+      .starfall-container .starfield {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: rotateZ(45deg);
+      }
+      
+      .starfall-container .falling-star {
+      position: absolute;
+      height: 2px;
+      background: linear-gradient(-45deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+      border-radius: 999px;
+      filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
+      animation:
+      star-tail 3000ms ease-in-out infinite,
+      star-falling 3000ms ease-in-out infinite;
+      }
+      
+      .starfall-container .falling-star::before,
+      .starfall-container .falling-star::after {
+      content: '';
+      position: absolute;
+      top: calc(50% - 1px);
+      right: 0;
+      height: 2px;
+      background: linear-gradient(-45deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+      border-radius: 100%;
+      animation: star-glow 3000ms ease-in-out infinite;
+      }
+      
+      .starfall-container .falling-star::before {
+      transform: translateX(50%) rotateZ(45deg);
+      }
+      
+      .starfall-container .falling-star::after {
+      transform: translateX(50%) rotateZ(-45deg);
+      }
+      
+      @keyframes star-tail {
+      0% { width: 0; }
+      30% { width: 100px; }
+      100% { width: 0; }
+      }
+      
+      @keyframes star-glow {
+      0% { width: 0; }
+      50% { width: 30px; }
+      100% { width: 0; }
+      }
+      
+      @keyframes star-falling {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(300px); }
+      }
+      </style>
+      </head>
+      <body>
+      <div class="starfall-container">
+      <div class="starfield" id="starfield"></div>
+      </div>
+      <script>
+      (function() {
+      const starfield = document.querySelector('.starfall-container .starfield');
+      const skySegments = [
+      { x: [0, 33], y: [0, 33] },
+      { x: [33, 66], y: [0, 33] },
+      { x: [66, 100], y: [0, 33] },
+      { x: [0, 33], y: [33, 66] },
+      { x: [33, 66], y: [33, 66] },
+      { x: [66, 100], y: [33, 66] },
+      { x: [0, 33], y: [66, 100] },
+      { x: [33, 66], y: [66, 100] },
+      { x: [66, 100], y: [66, 100] }
+      ];
+      const starsInSegment = 3;
+      
+      skySegments.forEach(segment => {
+      for (let i = 0; i < starsInSegment; i++) {
+      const star = document.createElement('div');
+      star.className = 'falling-star';
+      const x = segment.x[0] + Math.random() * (segment.x[1] - segment.x[0]);
+      const y = segment.y[0] + Math.random() * (segment.y[1] - segment.y[0]);
+      star.style.left = `${x}%`;
+      star.style.top = `${y}%`;
+      const delay = Math.random() * 9999;
+      star.style.animationDelay = `${delay}ms`;
+      const duration = 3000 + (Math.random() * 1000 - 500);
+      star.style.animationDuration = `${duration}ms`;
+      star.style.setProperty('--falling-delay', `${delay}ms`);
+      const brightness = 0.75 + Math.random() * 0.5;
+      star.style.opacity = brightness;
+      starfield.appendChild(star);
+      }
+      });
+      })();
+      </script>
+
+    <div class="fixed-background"></div>
+    <style type="text/css">* {cursor: url(https://cur.cursors-4u.net/others/oth-9/oth800.cur), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2012/02/04/pink-bow-tie-9.html" target="_blank" title="Pink Bow Tie"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Pink Bow Tie" style="position:absolute; top: 0px; right: 0px;" /></a>
+    <script type="text/javascript" src="../about/main.js"></script>
+    <script src="../tooltip-jquary.js"></script>
+    <script src="../tooltip.js"></script>
+    <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+		<script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
+  </body>
+</html>

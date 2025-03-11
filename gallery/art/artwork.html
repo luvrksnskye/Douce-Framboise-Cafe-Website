@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morita's Art Gallery</title>
+    <style>
+      @font-face {
+        font-family: 'ktegaki';
+        src: url(../../assets/fonts/KTEGAKI.ttf) format('woff');
+      }
+
+      body {
+        font-family: 'ktegaki';
+        color: #a2806c;
+        font-size: 23px;
+        background-color: #fefcf5;
+        padding: 20px;
+        margin: 0;
+      }
+
+      a:link, a:visited {
+        text-decoration: none;
+        color: #AC8872;
+      }
+      
+      a:hover {
+        color: #D1AD90;
+      }
+      
+      a:active {
+        color: #AC8872;
+      }
+      
+      ::selection {
+        background-color: #fcebde;
+      }
+
+      .gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -5px;
+      }
+
+      .gallery-item {
+        width: calc(33.33% - 10px);
+        padding: 5px;
+        box-sizing: border-box;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.03);
+        z-index: 10;
+      }
+
+      .gallery-content {
+        background-image: url(../../assets/cakebg.png);
+        background-size: 500px;
+        background-repeat: repeat;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .gallery-content img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .gallery-desc {
+        padding: 15px;
+        text-align: center;
+      }
+
+      @media only screen and (max-width: 900px) {
+        .gallery-item {
+          width: calc(50% - 10px);
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        .gallery-item {
+          width: calc(100% - 10px);
+        }
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+        background: transparent;
+        height: 200px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #f8efde;
+      }
+
+      .page-title {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="page-title">Morita's Art Gallery</h1>
+    
+    <div class="gallery-container">
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/skye.png">
+          <div class="gallery-desc">
+            2025.<br><br> I drew this as a commission for <u><a href="https://luvrksknskyejourney.org/" target="_blank">Skye's</a></u> website mascot!!
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/raptor.png">
+          <div class="gallery-desc">
+            2025.<br><br> Cute calico velociraptor I drew!
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/gato-chistoso.PNG">
+          <div class="gallery-desc">
+            Handsome kitty!!
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/sunflower-kitty.PNG">
+          <div class="gallery-desc">
+            Kitten with sunflowers
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/DIBUJITO DEL MISO.png">
+          <div class="gallery-desc">
+            Adorable calico kitten...
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/cute-kitty.PNG">
+          <div class="gallery-desc">
+            Cute kitty with collar
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/IMG_2925.PNG">
+          <div class="gallery-desc">
+            Portrait illustration
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/IMG_4315.PNG">
+          <div class="gallery-desc">
+            Character artwork
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/IMG_4330.PNG">
+          <div class="gallery-desc">
+            Pink-themed character
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/IMG_4332.PNG">
+          <div class="gallery-desc">
+            Formal attire illustration
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/IMG_4334.PNG">
+          <div class="gallery-desc">
+            Blue-haired character
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/IMG_4338.PNG">
+          <div class="gallery-desc">
+            Orange outfit character
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/IMG_4339.PNG">
+          <div class="gallery-desc">
+            Pink-themed portrait
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/IMG_4342.PNG">
+          <div class="gallery-desc">
+            Suit character design
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/IMG_4343.PNG">
+          <div class="gallery-desc">
+            Character illustration
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/IMG_4344.PNG">
+          <div class="gallery-desc">
+            Green-themed character
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/IMG_4346.PNG">
+          <div class="gallery-desc">
+            Angelic character
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/IMG_4349.PNG">
+          <div class="gallery-desc">
+            Dark-themed portrait
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/IMG_4350.PNG">
+          <div class="gallery-desc">
+            Fashion illustration
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/IMG_4352.PNG">
+          <div class="gallery-desc">
+            Red-themed character
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/IMG_7994.JPG">
+          <div class="gallery-desc">
+            Pink outfit illustration
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/Comi.png">
+          <div class="gallery-desc">
+            Character in casual attire
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-content">
+          <img src="../artwork/Comi. 🌷.png">
+          <div class="gallery-desc">
+            Character in purple dress
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <style type="text/css">* {cursor: url(https://cur.cursors-4u.net/others/oth-9/oth800.cur), auto !important;}</style>
+    <a href="https://www.cursors-4u.com/cursor/2012/02/04/pink-bow-tie-9.html" title="Pink Bow Tie" style="position: fixed; bottom: 10px; right: 10px;">
+      <img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Pink Bow Tie" />
+    </a>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Douce Framboise Cafe</title>
+<link rel="icon" type="image/x-icon" href="../assets/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="music-container">
+      <img id="vinyl" src="../assets/vinyl.png" alt="Vinyl" />
+      <div id="music-inner">
+        <img id="music-icon" src="../assets/desayuno.png" alt="Music Icon" />
+        <img id="music-icon-1" src="../assets/cafe.png" alt="Music Icon" />
+        <div id="music-player">
+        </div>
+      </div>
+    </div>
+
+    <div class=left> <div class=memo> 
+      <div class=memo2>
+      <center>
+      <img src="../assets/gifs/kitty.webp" height=55>
+      <br>
+      Welcome to my virtual art gallery! 
+      <br><br>
+      i'll try to keep this page updated with my favorite drawings, doodles, and projects of all mediums. <br>
+      I am currently a graphic design student, so here you will find some of my work and customs!!
+      <br><br>
+      Thanks for looking! 
+      <br><br>
+      <img src="../assets/gifs/sheep2.gif">
+      </center>
+      </div> 
+      </div>
+      
+      <!-- New links with larger font size -->
+      <br>
+      <div style="font-size: 30px;">
+        <center>
+        <img src="../assets/materials/artwork.png" height="50" width="50"> 
+        <a href="art/artwork.html" target="page" onclick="playSound()">artwork</a>
+        <br>
+        <img src="../assets/materials/commissions.png" height="50" width="50"> 
+        <a href="../about/index.html" onclick="playSound()">about me</a>
+        <br>
+        <img src="../assets/biscuithouse2.gif"> 
+        <a href="../index.html" onclick="playSound()">go home</a>
+      </center>
+      </div>
+    </div>
+    <div class=container-right>
+      <div class=main>
+        <iframe src="art/artwork.html" name="page"
+         width="100%" height="100%" style="border:none;"
+        ></iframe> 
+  
+      </div>
+    </div>
+    <img src="../assets/strawberries.png" alt="Commissions" class="top-right-image">
+    <script>
+      function playSound() {
+        const audio = new Audio('../assets/sound-effects/fliptab.mp3');
+        audio.play();
+      }
+      </script>
+    <div class="fixed-background"></div>
+    <style type="text/css">* {cursor: url(https://cur.cursors-4u.net/others/oth-9/oth800.cur), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2012/02/04/pink-bow-tie-9.html" target="_blank" title="Pink Bow Tie"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Pink Bow Tie" style="position:absolute; top: 0px; right: 0px;" /></a>
+    <script type="text/javascript" src="../about/main.js"></script>
+    <script src="../tooltip-jquary.js"></script>
+    <script src="../tooltip.js"></script>
+    <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+		<script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
+  </body>
+</html>

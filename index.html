@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Douce Framboise Cafe</title>
+<link rel="icon" type="image/x-icon" href="assets/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+
+  <!-- Cafe Sign -->
+  <div class="cafe-sign">
+    <img src="assets/divider.png" class="divider">
+    <div class="cafe-title">Douce Framboise Café!</div>
+    <img src="assets/kitty-icon.png" width="60" height="50">
+    <div class="cafe-welcome">Welcome to our sweet little corner of happiness! Indulge in our delightful pastries and aromatic teas.<br>
+     Made with love, served with a smile!</div>
+  </div>
+    <img src="assets/gatito-calico.png" class="kitty">
+    <img src="assets/title.png" class="title">
+    <a href="menu/index.html">
+      <img src="assets/enter-button.png" class="enter">
+  </a>  
+    <img title= "a letter from skye!" src="assets/carta.png" class="skye-letter">
+    <div class="fixed-background"></div>
+      
+    <canvas id="treeCanvas"></canvas>
+    <canvas id="leavesCanvas" width="500" height="300"></canvas>	
+    
+    <div class="sidebar-toggle">
+      <img src="assets/bookmark.png" alt="Toggle Menu">
+  </div>
+  <img id="navbar" src="assets/navbar.png" alt="Navigation bar">
+  
+  <div class="sidebar">
+    <div class="sidebar-content">
+        <button class="menu-button" onclick="location.href='about/index.html'">
+            <img src="assets/buttons/about.png" alt="About">
+        </button>
+        <button class="menu-button" onclick="location.href='gallery/index.html'">
+          <img src="assets/buttons/gallery.png" alt="Gallery">
+      </button>
+        <button class="menu-button" onclick="location.href='menu/index.html'">
+            <img src="assets/buttons/menu.png" alt="Menu">
+        </button>
+        <button class="menu-button credits-button">
+            <img src="assets/buttons/credits.png" alt="Credits">
+        </button>
+        <button class="menu-button updates-button">
+            <img src="assets/buttons/updates.png" alt="Updates">
+        </button>
+        <button class="menu-button" onclick="location.href='livechat/index.html'">
+            <img src="assets/buttons/guestbook.png" alt="Guestbook">
+        </button>
+    </div>
+</div>
+
+<div class="blur-overlay"></div>
+
+
+ <!-- Updates Panel -->
+<div class="updates-overlay">
+  <div class="updates-container">
+    <div class="updates-panel">
+      <h2 class="updates-header">WEBSITE UPDATES</h2>
+      <button class="close-updates">✖</button>
+      <div class="updates-scroll-container">
+        <div class="updates-content">
+          <div class="update-item">
+            11.mar ୨୧ Added other site features and improvements
+          </div>
+          <div class="update-item">
+            10.mar ୨୧ Added art gallery section with first uploads
+          </div>
+          <div class="update-item">
+            09.mar ୨୧ Created comprehensive about section
+          </div>
+          <div class="update-item">
+            25.feb ୨୧ Added new chat feature
+          </div>
+          <div class="update-item">
+            24.feb ୨୧ Updated site design with cute elements
+          </div>
+          <div class="update-item">
+            23.feb ୨୧ Launched initial version of the website
+          </div>
+          <div class="update-item">
+            22.feb ୨୧ Created the first draft of the layout
+          </div>
+          <div class="update-item">
+            21.feb ୨୧ Started development of this project
+          </div>
+          <div class="update-item">
+            20.feb ୨୧ Initial project planning phase
+          </div>
+          <div class="update-item">
+            19.feb ୨୧ Gathered inspiration for cute designs lol
+          </div>
+          <div class="update-item">
+            18.feb ୨୧ Created mood board for website theme
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="credits-overlay">
+  <div class="credits-container">
+    <div class="credits-panel">
+      <h2 class="credits-header">WEBSITE CREDITS</h2>
+      <button class="close-credits">✖</button>
+      <div class="credits-scroll-container">
+        <div class="credits-content">
+          <div class="credit-item">
+            <h3>Design & Development</h3>
+            Created with love by <a href="https://luvrksknskyejourney.org/" target="_blank">Skye Journey</a>
+          </div>
+          <div class="credit-item">
+            <h3>Artwork & Graphics</h3>
+            Original illustrations by Morita<br>
+            Image elements from Pinterest and Canva
+          </div>
+          <div class="credit-item">
+            <h3> Sound Effects</h3>
+            Adobe<br>
+           Soundly
+          </div>
+          <div class="credit-item">
+            <h3>Fonts</h3>
+           <a href="https://font.spicy-sweet.com/" target="_blank">Kawaii</a> <br>
+           Bethaine<br>
+            Additional fonts from Google Fonts
+          </div>
+          <div class="credit-item">
+            <h3>Special Thanks</h3>
+            Thanks to everyone who supported this little project! ୨୧<br>
+            - Skye
+          </div>
+          <div class="credit-item">
+            <h3>Technologies Used</h3>
+            HTML, CSS, JavaScript<br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.querySelector('.sidebar');
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
+    const blurOverlay = document.querySelector('.blur-overlay');
+    const navbar = document.getElementById('navbar');
+    const doorbellSound = new Audio('assets/sound-effects/door-bell.mp3');
+    const openPostCardSound = new Audio('assets/sound-effects/open-post-card.mp3');
+    
+    // Updates panel elements
+    const updatesOverlay = document.querySelector('.updates-overlay');
+    const updatesPanel = document.querySelector('.updates-panel');
+    const updatesButton = document.querySelector('.updates-button');
+    const closeUpdates = document.querySelector('.close-updates');
+    
+    // Credits panel elements
+    const creditsOverlay = document.querySelector('.credits-overlay');
+    const creditsPanel = document.querySelector('.credits-panel');
+    const creditsButton = document.querySelector('.credits-button');
+    const closeCredits = document.querySelector('.close-credits');
+
+    function toggleSidebar() {
+      const isOpening = !sidebar.classList.contains('active');
+
+      sidebar.classList.toggle('active');
+      sidebarToggle.classList.toggle('active');
+      blurOverlay.classList.toggle('active');
+      if (navbar) navbar.classList.toggle('active');
+
+      if (isOpening) {
+        doorbellSound.currentTime = 0;
+        doorbellSound.play();
+      }
+    }
+    
+    function openUpdatesPanel() {
+      // Play the open post card sound
+      openPostCardSound.currentTime = 0;
+      openPostCardSound.play();
+      
+      // First show the overlay
+      updatesOverlay.classList.add('active');
+      
+      // Then slide in the panel (with a slight delay for effect)
+      setTimeout(() => {
+        updatesPanel.classList.add('active');
+      }, 100);
+      
+      // Close the sidebar when opening updates
+      if (sidebar && sidebar.classList.contains('active')) {
+        toggleSidebar();
+      }
+    }
+    
+    function closeUpdatesPanel() {
+      // First slide out the panel
+      updatesPanel.classList.remove('active');
+      
+      // Then hide the overlay after panel animation completes
+      setTimeout(() => {
+        updatesOverlay.classList.remove('active');
+      }, 500);
+    }
+    
+    function openCreditsPanel() {
+      // Play the open post card sound
+      openPostCardSound.currentTime = 0;
+      openPostCardSound.play();
+      
+      // First show the overlay
+      creditsOverlay.classList.add('active');
+      
+      // Then slide in the panel (with a slight delay for effect)
+      setTimeout(() => {
+        creditsPanel.classList.add('active');
+      }, 100);
+      
+      // Close the sidebar when opening credits
+      if (sidebar && sidebar.classList.contains('active')) {
+        toggleSidebar();
+      }
+    }
+    
+    function closeCreditsPanel() {
+      // First slide out the panel
+      creditsPanel.classList.remove('active');
+      
+      // Then hide the overlay after panel animation completes
+      setTimeout(() => {
+        creditsOverlay.classList.remove('active');
+      }, 500);
+    }
+
+    // Initialize event listeners if elements exist
+    if (sidebarToggle) sidebarToggle.addEventListener('click', toggleSidebar);
+    if (blurOverlay) blurOverlay.addEventListener('click', toggleSidebar);
+    if (updatesButton) updatesButton.addEventListener('click', openUpdatesPanel);
+    if (closeUpdates) closeUpdates.addEventListener('click', closeUpdatesPanel);
+    
+    // New event listeners for credits panel
+    if (creditsButton) creditsButton.addEventListener('click', openCreditsPanel);
+    if (closeCredits) closeCredits.addEventListener('click', closeCreditsPanel);
+  });
+</script>
+
+    
+    <script>
+
+const openSound = new Audio('assets/sound-effects/open-post-card.mp3');
+const closeSound = new Audio('assets/sound-effects/page-flip.mp3');
+
+
+const letterOverlay = document.createElement('div');
+letterOverlay.className = 'letter-overlay';
+
+const letterImg = document.createElement('img');
+letterImg.src = 'assets/carta-para-morita.png';
+
+
+letterOverlay.appendChild(letterImg);
+document.body.appendChild(letterOverlay);
+
+
+document.querySelector('.skye-letter').addEventListener('click', function () {
+    openSound.play();
+    letterOverlay.style.display = 'flex';
+});
+
+
+letterOverlay.addEventListener('click', function (event) {
+    if (event.target === letterOverlay) { 
+        closeSound.play();
+        letterOverlay.style.display = 'none';
+    }
+});
+
+    </script>
+
+<div id="music-container">
+  <img id="vinyl" src="assets/vinyl.png" alt="Vinyl" />
+  <div id="music-inner">
+      <img id="music-icon" src="assets/desayuno.png" alt="Music Icon" />
+      <img id="music-icon-1" src="assets/cafe.png" alt="Music Icon" />
+      <div id="music-player">
+
+   
+  </div>
+
+
+
+<audio id="music" loop autoplay>
+  <source src="assets/sound-effects/cafe-intro.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const vinyl = document.getElementById('vinyl');
+      const musicContainer = document.getElementById('music-container');
+      const audio = document.getElementById('music');
+      const playBtn = document.getElementById('play-btn');
+      const volumeBtn = document.getElementById('volume-btn');
+      const progressBar = document.querySelector('.progress-bar');
+      const progress = document.querySelector('.progress');
+      let isPlaying = true;
+      let isMuted = false;
+  
+      function togglePlay() {
+          if (isPlaying) {
+              audio.pause();
+              vinyl.style.animationPlayState = 'paused';
+              playBtn.textContent = 'play_circle_filled';
+          } else {
+              audio.play().catch(e => {
+                  console.log("Audio play failed:", e);
+                  const userInteractionRequired = () => {
+                      document.body.addEventListener('click', function initialClick() {
+                          audio.play();
+                          document.body.removeEventListener('click', initialClick);
+                      }, { once: true });
+                      alert("Please click anywhere to start the music (browser autoplay policy)");
+                  };
+                  userInteractionRequired();
+              });
+              vinyl.style.animationPlayState = 'running';
+              playBtn.textContent = 'pause_circle_filled';
+          }
+          isPlaying = !isPlaying;
+      }
+  
+      function toggleMute() {
+          audio.muted = !audio.muted;
+          isMuted = audio.muted;
+          volumeBtn.textContent = isMuted ? 'volume_off' : 'volume_up';
+      }
+  
+      function formatTime(seconds) {
+          const mins = Math.floor(seconds / 60);
+          const secs = Math.floor(seconds % 60);
+          return `${mins}:${secs.toString().padStart(2, '0')}`;
+      }
+  
+      function updateProgress(e) {
+          const { duration, currentTime } = audio;
+          const progressPercent = (currentTime / duration) * 100;
+          progress.style.width = `${progressPercent}%`;
+          
+          document.querySelector('.current').textContent = formatTime(currentTime);
+          if (duration) {
+              document.querySelector('.total').textContent = formatTime(duration);
+          }
+      }
+  
+      function setProgress(e) {
+          const width = this.clientWidth;
+          const clickX = e.offsetX;
+          const duration = audio.duration;
+          audio.currentTime = (clickX / width) * duration;
+      }
+  
+      // Event listeners
+      vinyl.addEventListener('click', togglePlay);
+      playBtn.addEventListener('click', togglePlay);
+      volumeBtn.addEventListener('click', toggleMute);
+      audio.addEventListener('timeupdate', updateProgress);
+      progressBar.addEventListener('click', setProgress);
+  
+      audio.addEventListener('play', function() {
+          isPlaying = true;
+          vinyl.style.animationPlayState = 'running';
+          playBtn.textContent = 'pause_circle_filled';
+      });
+  
+      audio.addEventListener('pause', function() {
+          isPlaying = false;
+          vinyl.style.animationPlayState = 'paused';
+          playBtn.textContent = 'play_circle_filled';
+      });
+  
+      // Initial setup
+      audio.addEventListener('loadedmetadata', function() {
+          document.querySelector('.total').textContent = formatTime(audio.duration);
+      });
+  });
+  </script>
+<style type="text/css">* {cursor: url(https://cur.cursors-4u.net/others/oth-9/oth800.cur), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2012/02/04/pink-bow-tie-9.html" target="_blank" title="Pink Bow Tie"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Pink Bow Tie" style="position:absolute; top: 0px; right: 0px;" /></a>
+    <script type="text/javascript" src="chery-blossom.js"></script>
+    <script src="tooltip-jquary.js"></script>
+    <script src="tooltip.js"></script>
+    <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+		<script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
+  </body>
+</html>
